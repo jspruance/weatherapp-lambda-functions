@@ -12,14 +12,13 @@ exports.handler = async (event, context) => {
   const params = {
     TableName: "Locations",
     Key: {
-      email_address: { S: "jgspruance@gmail.com" }
+      id: { S: "12345" }
     }
   };
 
   // Call DynamoDB to get the item from the table
   try {
     const data = await ddb.getItem(params).promise();
-    // data.Item.locations.SS
     responseBody = JSON.stringify(data);
     statusCode = 200;
   } catch (err) {

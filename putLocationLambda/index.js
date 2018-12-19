@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
   const params = {
     TableName: "Locations",
     Item: {
-      email_address: { S: "jgspruance@gmail.com" },
+      id: { S: "12345" },
       locations: { SS: ["Seattle", "Krasnoyarsk", "Oslo"] }
     }
   };
