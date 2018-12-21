@@ -5,7 +5,7 @@ AWS.config.update({ region: "us-west-2" });
 
 exports.handler = async (event, context) => {
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-10-08" });
-
+  
   let requestBody = JSON.parse(event.body);
   let responseBody = "";
   let statusCode = 0;
@@ -38,3 +38,4 @@ exports.handler = async (event, context) => {
 
   return response;
 };
+
