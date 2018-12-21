@@ -9,8 +9,10 @@ exports.handler = async (event, context) => {
 
   let responseBody = "";
   let statusCode = 0;
+
   const { id } = event.pathParameters;
-  const { locations } = event.body.locations;
+  let requestBody = JSON.parse(event.body);
+  const { locations } = requestBody;
 
   const params = {
     TableName: "Users",
